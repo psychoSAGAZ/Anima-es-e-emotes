@@ -129,13 +129,11 @@ async function fetchFromAPI(apiInfo, existingData) {
                             const bundledAssets = {};
 
                             item.bundledItems.forEach(bundledItem => {
-                                // Corta pacotes de roupas de avatares antigos do Roblox
                                 if (bundledItem.type === "UserOutfit" || bundledItem.type === "Outfit") return;
 
                                 let animType = bundledItem.name || bundledItem.assetType || "Unknown";
                                 animType = animType.toLowerCase();
 
-                                // Validação estrita do tipo de animação
                                 if (animType.includes("inatividade") || animType.includes("idle")) animType = "Idle";
                                 else if (animType.includes("corrida") || animType.includes("run")) animType = "Run";
                                 else if (animType.includes("andar") || animType.includes("walk")) animType = "Walk";
@@ -145,17 +143,14 @@ async function fetchFromAPI(apiInfo, existingData) {
                                 else if (animType.includes("escalada") || animType.includes("climb")) animType = "Climb";
                                 else if (animType.includes("pose")) animType = "Pose";
                                 else {
-                                    // Ignora completamente itens que não correspondam a animações legítimas
                                     return; 
                                 }
 
                                 if (bundledItem.id) {
+                                    // Guarda diretamente o ID do item em vez de criar uma lista (array)
+                                    // Se a categoria já tem um ID principal guardado, ignora as variações extras
                                     if (!bundledAssets[animType]) {
-                                        bundledAssets[animType] = [];
-                                    }
-                                    // Impede repetição interna de IDs na mesma categoria
-                                    if (!bundledAssets[animType].includes(bundledItem.id)) {
-                                        bundledAssets[animType].push(bundledItem.id);
+                                        bundledAssets[animType] = bundledItem.id;
                                     }
                                 }
                             });
@@ -292,4 +287,3 @@ process.on("uncaughtException", (error) => {
 });
 
 main();
-                                
