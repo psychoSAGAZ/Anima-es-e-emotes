@@ -1,0 +1,31 @@
+name: Executar EmoteSniper
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Isso faz o script rodar de 1 em 1 hora.
+  workflow_dispatch: # Permite que você ative o script manualmente quando quiser.
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Baixar código do repositório
+      uses: actions/checkout@v4
+
+    - name: Configurar o Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Executar o Sniper
+      run: node index.js
+
+    - name: Salvar alterações no GitHub
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+        git add *.json
+        git commit -m "Atualizando dados das animações [skip ci]" || exit 0
+        git push
+        
