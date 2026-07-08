@@ -101,6 +101,34 @@ async function fetchData(baseUrl, cursor = "", maxRetries = 3) {
     }
 }
 
+// NOVO: Função que checa o tipo exato do item direto na raiz do Roblox!
+async function getExactAnimType(assetId) {
+    try {
+        // Pausa pequena para não tomar bloqueio da API por fazer perguntas demais
+        await new Promise(r => setTimeout(r, 200)); 
+        
+        const data = await fetchData(`https://economy.roproxy.com/v2/assets/${assetId}/details`);
+        
+        if (data && data.AssetTypeId) {
+            // Mapeamento 100% oficial dos IDs de tipos de assets do Roblox
+            switch(data.AssetTypeId) {
+                case 48: return "Climb";
+                case 50: return "Fall";
+                case 51: return "Idle";
+                case 52: return "Jump";
+                case 53: return "Run";
+                case 54: return "Swim";
+                case 55: return "Walk";
+                case 56: return "Pose";
+                default: return null; // Se for roupa ou outra coisa inútil, descarta
+            }
+        }
+    } catch (error) {
+        return null;
+    }
+    return null;
+}
+
 async function fetchFromAPI(apiInfo, existingData) {
     const apiItems = [];
     let nextPageCursor = null;
@@ -116,7 +144,8 @@ async function fetchFromAPI(apiInfo, existingData) {
             const response = await fetchData(apiInfo.baseUrl, nextPageCursor);
 
             if (response.data && Array.isArray(response.data)) {
-                response.data.forEach((item) => {
+                // Usando for...of para podermos esperar a API responder o tipo exato
+                for (const item of response.data) {
                     if (existingData.ids.has(item.id)) {
                         duplicateCount++;
                     } else {
@@ -128,32 +157,22 @@ async function fetchFromAPI(apiInfo, existingData) {
                         if (item.bundledItems && Array.isArray(item.bundledItems)) {
                             const bundledAssets = {};
 
-                            item.bundledItems.forEach(bundledItem => {
-                                if (bundledItem.type === "UserOutfit" || bundledItem.type === "Outfit") return;
-
-                                let animType = bundledItem.name || bundledItem.assetType || "Unknown";
-                                animType = animType.toLowerCase();
-
-                                if (animType.includes("inatividade") || animType.includes("idle")) animType = "Idle";
-                                else if (animType.includes("corrida") || animType.includes("run")) animType = "Run";
-                                else if (animType.includes("andar") || animType.includes("walk")) animType = "Walk";
-                                else if (animType.includes("pulo") || animType.includes("jump")) animType = "Jump";
-                                else if (animType.includes("queda") || animType.includes("fall")) animType = "Fall";
-                                else if (animType.includes("nado") || animType.includes("swim")) animType = "Swim";
-                                else if (animType.includes("escalada") || animType.includes("climb")) animType = "Climb";
-                                else if (animType.includes("pose")) animType = "Pose";
-                                else {
-                                    return; 
-                                }
+                            for (const bundledItem of item.bundledItems) {
+                                // Pula roupas direto
+                                if (bundledItem.type === "UserOutfit" || bundledItem.type === "Outfit") continue;
 
                                 if (bundledItem.id) {
-                                    // Guarda diretamente o ID do item em vez de criar uma lista (array)
-                                    // Se a categoria já tem um ID principal guardado, ignora as variações extras
-                                    if (!bundledAssets[animType]) {
-                                        bundledAssets[animType] = bundledItem.id;
+                                    // Pede o tipo EXATO para a API do Roblox
+                                    const exactType = await getExactAnimType(bundledItem.id);
+                                    
+                                    if (exactType) {
+                                        // Se a categoria ainda está vazia, salva este ID direto como um número!
+                                        if (!bundledAssets[exactType]) {
+                                            bundledAssets[exactType] = bundledItem.id;
+                                        }
                                     }
                                 }
-                            });
+                            }
 
                             if (Object.keys(bundledAssets).length > 0) {
                                 itemData.bundledItems = bundledAssets;
@@ -164,7 +183,7 @@ async function fetchFromAPI(apiInfo, existingData) {
                         existingData.ids.add(item.id);
                         newItemsCount++;
                     }
-                });
+                }
             }
 
             nextPageCursor = response.nextPageCursor;
@@ -200,7 +219,7 @@ function saveData(items, filename) {
 
 async function processAPIsByFile() {
     const startTime = Date.now();
-    log("Starting combined update...");
+    log("Starting exact classification update...");
 
     const apisByFile = {};
     APIs.forEach(api => {
@@ -248,7 +267,7 @@ async function processAPIsByFile() {
 }
 
 async function main() {
-    log("Starting Enhanced EmoteSniper with Animation support...");
+    log("Starting Accurate EmoteSniper...");
 
     try {
         const { results, duration } = await processAPIsByFile();
@@ -264,14 +283,14 @@ async function main() {
         }
 
         if (allSuccess) {
-            log("Enhanced EmoteSniper completed successfully");
+            log("Accurate EmoteSniper completed successfully");
             process.exit(0);
         } else {
-            log("Enhanced EmoteSniper completed with some errors");
+            log("Accurate EmoteSniper completed with some errors");
             process.exit(1);
         }
     } catch (error) {
-        log(`Enhanced EmoteSniper error: ${error.message}`);
+        log(`Accurate EmoteSniper error: ${error.message}`);
         process.exit(1);
     }
 }
