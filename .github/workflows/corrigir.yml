@@ -1,0 +1,31 @@
+name: Corrigir Itens Incompletos
+
+on:
+  workflow_dispatch: # Só roda quando você clicar no botão manualmente!
+
+jobs:
+  run-correction:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Baixar código do repositório
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Configurar o Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Executar Script de Correção
+      run: node corrigir.js
+
+    - name: Salvar alterações no GitHub
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+        git add *.json
+        git commit -m "Correção automatizada de itens incompletos [skip ci]" || exit 0
+        git pull --rebase origin main
+        git push origin main
