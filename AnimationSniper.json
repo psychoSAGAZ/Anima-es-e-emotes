@@ -1,7 +1,7 @@
 {
   "keyword": null,
   "totalItems": 423,
-  "lastUpdate": "2026-07-09T10:52:40.979Z",
+  "lastUpdate": "2026-07-09T12:45:48.348Z",
   "data": [
     {
       "id": 2623795,
@@ -1010,7 +1010,16 @@
     },
     {
       "id": 23288783307950,
-      "name": "Dizzy Animation Pack"
+      "name": "Dizzy Animation Pack",
+      "bundledItems": {
+        "Idle": 137255148783720,
+        "Walk": 81054479341998,
+        "Run": 105873418863090,
+        "Jump": 121811306911133,
+        "Fall": 78281355074909,
+        "Climb": 117513930450845,
+        "Swim": 97259493650901
+      }
     },
     {
       "id": 45437943981655,
