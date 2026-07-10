@@ -26,7 +26,7 @@ async function fetchData(url) {
 
 async function getExactAnimType(assetId) {
     try {
-        await new Promise(r => setTimeout(r, 400)); 
+        await new Promise(r => setTimeout(r, 300)); 
         const data = await fetchData(`https://economy.roproxy.com/v2/assets/${assetId}/details`);
         if (data && data.AssetTypeId) {
             switch(data.AssetTypeId) {
@@ -42,13 +42,37 @@ async function getExactAnimType(assetId) {
             }
         }
     } catch (e) {
-        log(`Erro ao checar tipo do asset ${assetId}: ${e.message}`);
+        // Silencioso para não poluir o log
     }
     return null;
 }
 
+async function getItemsFromID(id) {
+    // Tentativa 1: Tenta ler como um Bundle oficial
+    try {
+        const data = await fetchData(`https://catalog.roproxy.com/v1/bundles/${id}/details`);
+        if (data && Array.isArray(data.items)) {
+            return data.items.map(i => ({ id: i.id, type: i.type }));
+        }
+    } catch (e) {
+        // Falhou como bundle, segue para a tentativa 2
+    }
+
+    // Tentativa 2: Tenta ler como um Asset/Package detalhado
+    try {
+        const data = await fetchData(`https://catalog.roproxy.com/v1/catalog/items/${id}/details?itemType=Asset`);
+        if (data && data.bundledItems) {
+            return data.bundledItems.map(i => ({ id: i.id, type: i.type }));
+        }
+    } catch (e) {
+        // Falhou em ambos
+    }
+
+    return null;
+}
+
 async function corrigirArquivos() {
-    log("Iniciando varredura profunda de correção...");
+    log("Iniciando varredura híbrida (Bundle/Asset) de correção...");
 
     for (const arquivo of arquivos) {
         if (!fs.existsSync(arquivo)) {
@@ -56,30 +80,28 @@ async function corrigirArquivos() {
             continue;
         }
 
-        log(`Analisando ${arquivo}...`);
+        log(`Analisando arquivo: ${arquivo}...`);
         const fileData = JSON.parse(fs.readFileSync(arquivo, "utf8"));
         const itens = fileData.data || [];
         let corrigidos = 0;
 
         for (const item of itens) {
-            // Verifica se está sem os dados ou se herdou o formato incorreto antigo
+            // Se não tem bundledItems ou se está vazio/bugado
             if (!item.bundledItems || Array.isArray(item.bundledItems) || Object.keys(item.bundledItems).length === 0) {
-                log(`Corrigindo de forma precisa: ${item.name} (ID: ${item.id})`);
+                log(`Tentando corrigir: ${item.name} (ID: ${item.id})`);
                 
                 try {
-                    // Usando a API correta de detalhes de Bundle do Roblox via RoProxy
-                    const urlDetails = `https://catalog.roproxy.com/v1/bundles/${item.id}/details`;
-                    const pacoteDetails = await fetchData(urlDetails);
+                    const componentes = await getItemsFromID(item.id);
                     
-                    if (pacoteDetails && Array.isArray(pacoteDetails.items)) {
+                    if (componentes && componentes.length > 0) {
                         const novosBundledItems = {};
 
-                        for (const component of pacoteDetails.items) {
-                            if (component.type === "Asset" && component.id) {
-                                const exactType = await getExactAnimType(component.id);
+                        for (const comp of componentes) {
+                            if (comp.id) {
+                                const exactType = await getExactAnimType(comp.id);
                                 if (exactType && !novosBundledItems[exactType]) {
-                                    novosBundledItems[exactType] = component.id;
-                                    log(` -> Encontrado: ${exactType} (ID: ${component.id})`);
+                                    novosBundledItems[exactType] = comp.id;
+                                    log(`   -> [Achou] ${exactType}: ${comp.id}`);
                                 }
                             }
                         }
@@ -88,23 +110,25 @@ async function corrigirArquivos() {
                             item.bundledItems = novosBundledItems;
                             corrigidos++;
                         } else {
-                            log(` -> Nenhuma animação encontrada para o ID ${item.id}`);
+                            log(`   -> [Aviso] Nenhuma animação válida dentro dos itens deste ID.`);
                         }
+                    } else {
+                        log(`   -> [Erro] O Roblox não retornou nenhum sub-item para o ID ${item.id}`);
                     }
                 } catch (error) {
-                    log(`Não foi possível corrigir o item ${item.name}: ${error.message}`);
+                    log(`   -> Erro crítico no item ${item.name}: ${error.message}`);
                 }
                 
-                await new Promise(r => setTimeout(r, 1500));
+                await new Promise(r => setTimeout(r, 1000));
             }
         }
 
         if (corrigidos > 0) {
             fileData.lastUpdate = new Date().toISOString();
             fs.writeFileSync(arquivo, JSON.stringify(fileData, null, 2), "utf8");
-            log(`Sucesso! ${corrigidos} itens foram corrigidos em ${arquivo}.`);
+            log(`Fim: ${corrigidos} itens atualizados com sucesso em ${arquivo}.`);
         } else {
-            log(`Nada para corrigir em ${arquivo}.`);
+            log(`Nenhum item modificado em ${arquivo}.`);
         }
     }
     log("Varredura concluída!");
