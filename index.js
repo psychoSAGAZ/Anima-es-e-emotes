@@ -4,32 +4,27 @@ const fs = require("fs");
 const APIs = [
     {
         name: "Basic API",
-        baseUrl:
-            "https://catalog.roproxy.com/v1/search/items/details?Category=12&Subcategory=39&Limit=30",
+        baseUrl: "https://catalog.roproxy.com/v1/search/items/details?Category=12&Subcategory=39&Limit=30",
         outputFile: "EmoteSniper.json"
     },
     {
         name: "Latest API",
-        baseUrl:
-            "https://catalog.roproxy.com/v1/search/items/details?Category=12&Subcategory=39&Limit=30&salesTypeFilter=1&SortType=3",
+        baseUrl: "https://catalog.roproxy.com/v1/search/items/details?Category=12&Subcategory=39&Limit=30&salesTypeFilter=1&SortType=3",
         outputFile: "EmoteSniper.json"
     },
     {
         name: "Basic Animation API",
-        baseUrl:
-            "https://catalog.roproxy.com/v1/search/items/details?Category=12&Subcategory=38&salesTypeFilter=1&Limit=30",
+        baseUrl: "https://catalog.roproxy.com/v1/search/items/details?Category=12&Subcategory=38&salesTypeFilter=1&Limit=30",
         outputFile: "AnimationSniper.json"
     },
     {
         name: "Latest Animation API",
-        baseUrl:
-            "https://catalog.roproxy.com/v1/search/items/details?Category=12&Subcategory=38&salesTypeFilter=1&Limit=30&SortType=3",
+        baseUrl: "https://catalog.roproxy.com/v1/search/items/details?Category=12&Subcategory=38&salesTypeFilter=1&Limit=30&SortType=3",
         outputFile: "AnimationSniper.json"
     },
     {
         name: "offsale Animation API",
-        baseUrl:
-            "https://catalog.roproxy.com/v1/search/items/details?Category=12&Subcategory=38&salesTypeFilter=1&Limit=30&SortType=3&IncludeNotForSale=true",
+        baseUrl: "https://catalog.roproxy.com/v1/search/items/details?Category=12&Subcategory=38&salesTypeFilter=1&Limit=30&SortType=3&IncludeNotForSale=true",
         outputFile: "AnimationSniperoffsale.json"
     }
 ];
@@ -58,59 +53,39 @@ async function fetchData(baseUrl, cursor = "", maxRetries = 3) {
         try {
             const data = await new Promise((resolve, reject) => {
                 const url = `${baseUrl}${cursor ? `&Cursor=${cursor}` : ""}`;
-                const timeout = setTimeout(() => {
-                    reject(new Error("Request timeout"));
-                }, 30000);
+                const timeout = setTimeout(() => { reject(new Error("Request timeout")); }, 30000);
 
-                https
-                    .get(url, (res) => {
-                        clearTimeout(timeout);
-                        let data = "";
-
-                        if (res.statusCode !== 200) {
-                            reject(new Error(`HTTP Error: ${res.statusCode}`));
-                            return;
-                        }
-
-                        res.on("data", (chunk) => {
-                            data += chunk;
-                        });
-
-                        res.on("end", () => {
-                            try {
-                                const jsonData = JSON.parse(data);
-                                resolve(jsonData);
-                            } catch (error) {
-                                reject(new Error("JSON parsing error"));
-                            }
-                        });
-                    })
-                    .on("error", (error) => {
-                        clearTimeout(timeout);
-                        reject(error);
+                https.get(url, (res) => {
+                    clearTimeout(timeout);
+                    let data = "";
+                    if (res.statusCode !== 200) {
+                        reject(new Error(`HTTP Error: ${res.statusCode}`));
+                        return;
+                    }
+                    res.on("data", (chunk) => { data += chunk; });
+                    res.on("end", () => {
+                        try { resolve(JSON.parse(data)); } 
+                        catch (error) { reject(new Error("JSON parsing error")); }
                     });
+                }).on("error", (error) => {
+                    clearTimeout(timeout);
+                    reject(error);
+                });
             });
-
             return data;
         } catch (error) {
-            if (attempt === maxRetries) {
-                throw error;
-            }
+            if (attempt === maxRetries) throw error;
             await new Promise((resolve) => setTimeout(resolve, 2000 * attempt));
         }
     }
 }
 
-// NOVO: Função que checa o tipo exato do item direto na raiz do Roblox!
+// ETAPA 2: Função que olha o ID bruto coletado e diz se é Idle, Walk, Run, etc.
 async function getExactAnimType(assetId) {
     try {
-        // Pausa pequena para não tomar bloqueio da API por fazer perguntas demais
-        await new Promise(r => setTimeout(r, 200)); 
-        
+        await new Promise(r => setTimeout(r, 250)); // Evita bloqueio por requisições rápidas
         const data = await fetchData(`https://economy.roproxy.com/v2/assets/${assetId}/details`);
-        
         if (data && data.AssetTypeId) {
-            // Mapeamento 100% oficial dos IDs de tipos de assets do Roblox
             switch(data.AssetTypeId) {
                 case 48: return "Climb";
                 case 50: return "Fall";
@@ -120,12 +95,10 @@ async function getExactAnimType(assetId) {
                 case 54: return "Swim";
                 case 55: return "Walk";
                 case 56: return "Pose";
-                default: return null; // Se for roupa ou outra coisa inútil, descarta
+                default: return null;
             }
         }
-    } catch (error) {
-        return null;
-    }
+    } catch (e) {}
     return null;
 }
 
@@ -144,7 +117,7 @@ async function fetchFromAPI(apiInfo, existingData) {
             const response = await fetchData(apiInfo.baseUrl, nextPageCursor);
 
             if (response.data && Array.isArray(response.data)) {
-                // Usando for...of para podermos esperar a API responder o tipo exato
+                // Usando for...of para podermos usar await dentro do loop tranquilamente
                 for (const item of response.data) {
                     if (existingData.ids.has(item.id)) {
                         duplicateCount++;
@@ -155,27 +128,36 @@ async function fetchFromAPI(apiInfo, existingData) {
                         };
 
                         if (item.bundledItems && Array.isArray(item.bundledItems)) {
-                            const bundledAssets = {};
+                            // ETAPA 1: Coleta bruta estilo Open Source (Chaves temporárias 1, 2, 3...)
+                            const chavesTemporarias = {};
+                            let animCounter = 1;
 
-                            for (const bundledItem of item.bundledItems) {
-                                // Pula roupas direto
-                                if (bundledItem.type === "UserOutfit" || bundledItem.type === "Outfit") continue;
-
+                            item.bundledItems.forEach(bundledItem => {
+                                if (bundledItem.type === "UserOutfit" || bundledItem.type === "Outfit") return;
                                 if (bundledItem.id) {
-                                    // Pede o tipo EXATO para a API do Roblox
-                                    const exactType = await getExactAnimType(bundledItem.id);
-                                    
-                                    if (exactType) {
-                                        // Se a categoria ainda está vazia, salva este ID direto como um número!
-                                        if (!bundledAssets[exactType]) {
-                                            bundledAssets[exactType] = bundledItem.id;
+                                    const typeKey = (animCounter++).toString();
+                                    chavesTemporarias[typeKey] = bundledItem.id;
+                                }
+                            });
+
+                            // ETAPA 2: Tradução das chaves temporárias para os nomes corretos
+                            if (Object.keys(chavesTemporarias).length > 0) {
+                                const bundledAssetsTraduzido = {};
+
+                                for (const chaveTemp in chavesTemporarias) {
+                                    const subId = chavesTemporarias[chaveTemp];
+                                    const tipoReal = await getExactAnimType(subId);
+
+                                    if (tipoReal) {
+                                        if (!bundledAssetsTraduzido[tipoReal]) {
+                                            bundledAssetsTraduzido[tipoReal] = subId;
                                         }
                                     }
                                 }
-                            }
 
-                            if (Object.keys(bundledAssets).length > 0) {
-                                itemData.bundledItems = bundledAssets;
+                                if (Object.keys(bundledAssetsTraduzido).length > 0) {
+                                    itemData.bundledItems = bundledAssetsTraduzido;
+                                }
                             }
                         }
 
@@ -219,7 +201,7 @@ function saveData(items, filename) {
 
 async function processAPIsByFile() {
     const startTime = Date.now();
-    log("Starting exact classification update...");
+    log("Starting combined update with Two-Step validation...");
 
     const apisByFile = {};
     APIs.forEach(api => {
@@ -267,7 +249,7 @@ async function processAPIsByFile() {
 }
 
 async function main() {
-    log("Starting Accurate EmoteSniper...");
+    log("Starting Accurate EmoteSniper with Two-Step system...");
 
     try {
         const { results, duration } = await processAPIsByFile();
