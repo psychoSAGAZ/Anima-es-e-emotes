@@ -1,7 +1,7 @@
 {
   "keyword": null,
-  "totalItems": 3049,
-  "lastUpdate": "2026-07-19T15:46:45.702Z",
+  "totalItems": 3053,
+  "lastUpdate": "2026-07-19T16:45:15.802Z",
   "data": [
     {
       "id": 3360689775,
@@ -12198,6 +12198,22 @@
     {
       "id": 79767473144671,
       "name": "[New] Teddy Psycho [Trend]"
+    },
+    {
+      "id": 128862733229193,
+      "name": "Shake It - (Looped!)"
+    },
+    {
+      "id": 78189174730121,
+      "name": "Angry Rage Emote"
+    },
+    {
+      "id": 70983540642257,
+      "name": ":3 Therian Tail Wag Shake"
+    },
+    {
+      "id": 73546311987477,
+      "name": "Crazy Monkey Emote"
     }
   ]
 }
