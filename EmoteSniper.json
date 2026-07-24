@@ -1,7 +1,7 @@
 {
   "keyword": null,
-  "totalItems": 3644,
-  "lastUpdate": "2026-07-24T10:54:47.995Z",
+  "totalItems": 3651,
+  "lastUpdate": "2026-07-24T12:13:36.587Z",
   "data": [
     {
       "id": 3360689775,
@@ -14578,6 +14578,34 @@
     {
       "id": 133912061877031,
       "name": "⏳[LIMITED] Nonchalant Aura Float  [Idle, Chill]"
+    },
+    {
+      "id": 95394376289435,
+      "name": "Spin With A Friend!"
+    },
+    {
+      "id": 100310646282780,
+      "name": "Rakai Emote"
+    },
+    {
+      "id": 118668372439514,
+      "name": "[CUTE] Grumpy Bouncy Stomp"
+    },
+    {
+      "id": 104960209576835,
+      "name": "Sideways Floating Aura Emote"
+    },
+    {
+      "id": 114593299402030,
+      "name": "Jumping Sides Emote"
+    },
+    {
+      "id": 120495425738230,
+      "name": "cutesy idle pose"
+    },
+    {
+      "id": 95857898679248,
+      "name": "MM2 Fake Death [2]"
     }
   ]
 }
