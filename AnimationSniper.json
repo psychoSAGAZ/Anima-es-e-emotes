@@ -1,7 +1,7 @@
 {
   "keyword": null,
-  "totalItems": 1181,
-  "lastUpdate": "2026-07-24T14:47:30.486Z",
+  "totalItems": 1182,
+  "lastUpdate": "2026-07-24T16:20:13.760Z",
   "data": [
     {
       "id": 2623795,
@@ -15029,6 +15029,19 @@
       "name": "Slenderman Animation Pack",
       "bundledItems": {
         "Idle": 99080693874470
+      }
+    },
+    {
+      "id": 3381968489287,
+      "name": "GMod Animation Pack",
+      "bundledItems": {
+        "Idle": 119020055323251,
+        "Walk": 77832155848866,
+        "Run": 111708866395371,
+        "Jump": 94887979190744,
+        "Fall": 135673490520449,
+        "Climb": 129377331492040,
+        "Swim": 85893414106740
       }
     }
   ]
