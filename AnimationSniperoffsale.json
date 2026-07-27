@@ -1,7 +1,7 @@
 {
   "keyword": null,
-  "totalItems": 1433,
-  "lastUpdate": "2026-07-27T02:01:58.185Z",
+  "totalItems": 1434,
+  "lastUpdate": "2026-07-27T05:43:58.775Z",
   "data": [
     {
       "id": 182939927834531,
@@ -18083,6 +18083,19 @@
       "name": "Head Basketball Pack",
       "bundledItems": {
         "Swim": 97301035615223
+      }
+    },
+    {
+      "id": 83918735878800,
+      "name": "Smooth Western Cowboy",
+      "bundledItems": {
+        "Idle": 80881654428622,
+        "Walk": 106380509234111,
+        "Run": 100567313195691,
+        "Jump": 138579747174890,
+        "Fall": 79396627518453,
+        "Climb": 97028940597618,
+        "Swim": 109731329623619
       }
     }
   ]
