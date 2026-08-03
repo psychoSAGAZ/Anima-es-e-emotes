@@ -1,7 +1,7 @@
 {
   "keyword": null,
-  "totalItems": 1557,
-  "lastUpdate": "2026-08-02T23:52:26.736Z",
+  "totalItems": 1559,
+  "lastUpdate": "2026-08-03T01:52:37.956Z",
   "data": [
     {
       "id": 2623795,
@@ -19877,6 +19877,32 @@
         "Fall": 131098051601547,
         "Climb": 84781865016211,
         "Swim": 117928790358966
+      }
+    },
+    {
+      "id": 133601714978354,
+      "name": "FNAF Animatronic Scary Animation Pack",
+      "bundledItems": {
+        "Idle": 98963242093009,
+        "Walk": 123009255324210,
+        "Run": 108466568000512,
+        "Jump": 97588967752331,
+        "Fall": 91262574661197,
+        "Climb": 70763716249233,
+        "Swim": 107490264852108
+      }
+    },
+    {
+      "id": 82686199770834,
+      "name": "emo scene grunge gyaru alt girl animation pack",
+      "bundledItems": {
+        "Idle": 133610013651759,
+        "Walk": 86541277376052,
+        "Run": 112073437793611,
+        "Jump": 120231262823014,
+        "Fall": 105410017648143,
+        "Climb": 99380745183088,
+        "Swim": 89122270412901
       }
     }
   ]
