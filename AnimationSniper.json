@@ -1,7 +1,7 @@
 {
   "keyword": null,
-  "totalItems": 1693,
-  "lastUpdate": "2026-08-05T20:59:57.822Z",
+  "totalItems": 1695,
+  "lastUpdate": "2026-08-05T22:09:59.821Z",
   "data": [
     {
       "id": 2623795,
@@ -21628,6 +21628,32 @@
     {
       "id": 142357420307203,
       "name": "Smart Anime Detective Animation"
+    },
+    {
+      "id": 222084828255645,
+      "name": "cute anime dolly girl animation",
+      "bundledItems": {
+        "Idle": 81118385441188,
+        "Walk": 129729625170518,
+        "Run": 113708726504644,
+        "Jump": 125133816465628,
+        "Fall": 72289576846154,
+        "Climb": 129141074909887,
+        "Swim": 102551119965504
+      }
+    },
+    {
+      "id": 11692926899807,
+      "name": "Retro Diavolo Jojo",
+      "bundledItems": {
+        "Idle": 124236922478818,
+        "Walk": 132696809074557,
+        "Run": 98852534995036,
+        "Jump": 130653275357902,
+        "Fall": 105470926137809,
+        "Climb": 125480331204667,
+        "Swim": 91390767419211
+      }
     }
   ]
 }
