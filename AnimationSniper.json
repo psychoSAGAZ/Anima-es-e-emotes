@@ -1,7 +1,7 @@
 {
   "keyword": null,
-  "totalItems": 1812,
-  "lastUpdate": "2026-08-08T11:22:43.624Z",
+  "totalItems": 1813,
+  "lastUpdate": "2026-08-08T12:28:07.607Z",
   "data": [
     {
       "id": 2623795,
@@ -23165,6 +23165,19 @@
         "Fall": 79189267440781,
         "Climb": 76123192477465,
         "Swim": 138541882934332
+      }
+    },
+    {
+      "id": 178002310430258,
+      "name": "♡ : cutesy little anime cat girl kitten animation",
+      "bundledItems": {
+        "Idle": 106248325216341,
+        "Walk": 110493242866821,
+        "Run": 71549139425352,
+        "Jump": 125245595197699,
+        "Fall": 121632906496986,
+        "Climb": 83375735713576,
+        "Swim": 114389881056868
       }
     }
   ]
