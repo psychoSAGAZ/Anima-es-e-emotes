@@ -1,7 +1,7 @@
 {
   "keyword": null,
-  "totalItems": 1838,
-  "lastUpdate": "2026-08-09T07:47:01.064Z",
+  "totalItems": 1842,
+  "lastUpdate": "2026-08-09T08:32:29.765Z",
   "data": [
     {
       "id": 2623795,
@@ -23503,6 +23503,58 @@
         "Fall": 119136149583052,
         "Climb": 105670543454366,
         "Swim": 71088169880512
+      }
+    },
+    {
+      "id": 258742173414853,
+      "name": "creepy scary silent hill zombie girl",
+      "bundledItems": {
+        "Idle": 123707766483575,
+        "Walk": 113181649020734,
+        "Run": 97070713955008,
+        "Jump": 80895280426484,
+        "Fall": 139099051599019,
+        "Climb": 118509399157022,
+        "Swim": 89323013553799
+      }
+    },
+    {
+      "id": 54667936580977,
+      "name": "japanese school girl yandere obsession scary",
+      "bundledItems": {
+        "Idle": 121121570969754,
+        "Walk": 115094431342131,
+        "Run": 110400752874893,
+        "Jump": 133919796812764,
+        "Fall": 98139776971668,
+        "Climb": 125786127956850,
+        "Swim": 72654109875935
+      }
+    },
+    {
+      "id": 6965295374153,
+      "name": "Sukuna Aura Farming Jujutsu Kaisen",
+      "bundledItems": {
+        "Idle": 134712211637689,
+        "Walk": 116476456671237,
+        "Run": 75713798259597,
+        "Jump": 94334265849376,
+        "Fall": 137999888224690,
+        "Climb": 91388836063839,
+        "Swim": 108469837703933
+      }
+    },
+    {
+      "id": 277401847696760,
+      "name": "creepy emo scene zombie girl animation pack",
+      "bundledItems": {
+        "Idle": 117409690813832,
+        "Walk": 78829252568326,
+        "Run": 130800508244725,
+        "Jump": 140486754285495,
+        "Fall": 89584529632808,
+        "Climb": 94682861797445,
+        "Swim": 109362527268439
       }
     }
   ]
