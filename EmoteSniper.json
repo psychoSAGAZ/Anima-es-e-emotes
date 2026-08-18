@@ -1,7 +1,7 @@
 {
   "keyword": null,
-  "totalItems": 6870,
-  "lastUpdate": "2026-08-18T15:22:02.155Z",
+  "totalItems": 6872,
+  "lastUpdate": "2026-08-18T16:20:35.517Z",
   "data": [
     {
       "id": 3360689775,
@@ -27482,6 +27482,14 @@
     {
       "id": 98730550020180,
       "name": "Bear Hug"
+    },
+    {
+      "id": 119393689379509,
+      "name": "YOKOYURE move"
+    },
+    {
+      "id": 80306315014467,
+      "name": "Viltrumite Point"
     }
   ]
 }
