@@ -1,7 +1,7 @@
 {
   "keyword": null,
-  "totalItems": 7013,
-  "lastUpdate": "2026-08-19T17:18:44.327Z",
+  "totalItems": 7016,
+  "lastUpdate": "2026-08-19T18:19:50.272Z",
   "data": [
     {
       "id": 3360689775,
@@ -28054,6 +28054,18 @@
     {
       "id": 135274485797762,
       "name": "⏳[LIMITED] Fake Death MM2 Troll (Play Dead)"
+    },
+    {
+      "id": 115559670498198,
+      "name": "Neck Roll"
+    },
+    {
+      "id": 87239294920162,
+      "name": "Raiden Punching Loop"
+    },
+    {
+      "id": 131847877129706,
+      "name": "Psycho Teddy"
     }
   ]
 }
