@@ -1,7 +1,7 @@
 {
   "keyword": null,
-  "totalItems": 2257,
-  "lastUpdate": "2026-08-20T23:18:31.825Z",
+  "totalItems": 2259,
+  "lastUpdate": "2026-08-21T00:42:47.249Z",
   "data": [
     {
       "id": 2623795,
@@ -28941,6 +28941,32 @@
         "Fall": 90375540733203,
         "Climb": 77825617250512,
         "Swim": 75815609434871
+      }
+    },
+    {
+      "id": 24889097599498,
+      "name": "cute relaxed cartoony animation pack",
+      "bundledItems": {
+        "Idle": 132805652017754,
+        "Walk": 93724066528466,
+        "Run": 107656848004087,
+        "Jump": 135184451782269,
+        "Fall": 90644375262311,
+        "Climb": 112954617412756,
+        "Swim": 132062820029661
+      }
+    },
+    {
+      "id": 191051885170029,
+      "name": "super scared shivering anxious animation pack",
+      "bundledItems": {
+        "Idle": 115963837827147,
+        "Walk": 133243688530256,
+        "Run": 103669350548378,
+        "Jump": 113357026470020,
+        "Fall": 76686836568690,
+        "Climb": 140499961556448,
+        "Swim": 97032234867438
       }
     }
   ]
