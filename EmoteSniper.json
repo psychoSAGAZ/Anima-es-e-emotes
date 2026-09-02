@@ -1,7 +1,7 @@
 {
   "keyword": null,
-  "totalItems": 8644,
-  "lastUpdate": "2026-09-02T21:27:10.445Z",
+  "totalItems": 8648,
+  "lastUpdate": "2026-09-02T23:41:58.492Z",
   "data": [
     {
       "id": 3360689775,
@@ -34578,6 +34578,22 @@
     {
       "id": 138296487130037,
       "name": "I Got That Feeling Dance"
+    },
+    {
+      "id": 103333565203623,
+      "name": "Thinking Emote"
+    },
+    {
+      "id": 113484045935574,
+      "name": "Jumping Crab [🦀]"
+    },
+    {
+      "id": 84273796851917,
+      "name": "Dramatic Crying Emote"
+    },
+    {
+      "id": 104345800718609,
+      "name": "Mark Casual Looping Idle Float Aura (Invincible)"
     }
   ]
 }
