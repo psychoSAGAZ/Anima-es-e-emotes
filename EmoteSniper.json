@@ -1,7 +1,7 @@
 {
   "keyword": null,
-  "totalItems": 12052,
-  "lastUpdate": "2026-10-04T22:06:46.598Z",
+  "totalItems": 12065,
+  "lastUpdate": "2026-10-05T01:25:24.620Z",
   "data": [
     {
       "id": 3360689775,
@@ -48210,6 +48210,58 @@
     {
       "id": 118798310686086,
       "name": "Baddies Like You"
+    },
+    {
+      "id": 82624646854417,
+      "name": "Spooky Scary Skeletons Dance"
+    },
+    {
+      "id": 15698511500,
+      "name": "Cuco - Levitate"
+    },
+    {
+      "id": 86634200265769,
+      "name": "Photo Booth Pose Emote"
+    },
+    {
+      "id": 121829390747812,
+      "name": "Floating Magic Headless Halloween"
+    },
+    {
+      "id": 91793561299885,
+      "name": "Kickback Aura Fly Emote Idle"
+    },
+    {
+      "id": 104472475591541,
+      "name": "(MATCHING) The Fazbear Band (Chica)"
+    },
+    {
+      "id": 116520303936428,
+      "name": "(MATCHING) The Fazbear Band (Freddy)"
+    },
+    {
+      "id": 121612692448516,
+      "name": "Rotisserie Chicken"
+    },
+    {
+      "id": 78058248796730,
+      "name": "Sweet Sway Pose"
+    },
+    {
+      "id": 117768400001523,
+      "name": "Halloween"
+    },
+    {
+      "id": 132269061574530,
+      "name": "♡ ::  cutesy shy pose :: ♡"
+    },
+    {
+      "id": 130212774490927,
+      "name": "MM2 Wall glitch"
+    },
+    {
+      "id": 78484476605999,
+      "name": "MM2 Wall Phase (Glitch)"
     }
   ]
 }
