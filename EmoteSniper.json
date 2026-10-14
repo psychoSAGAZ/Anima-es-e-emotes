@@ -1,7 +1,7 @@
 {
   "keyword": null,
-  "totalItems": 13347,
-  "lastUpdate": "2026-10-13T23:31:20.460Z",
+  "totalItems": 13366,
+  "lastUpdate": "2026-10-14T02:39:28.216Z",
   "data": [
     {
       "id": 3360689775,
@@ -53390,6 +53390,82 @@
     {
       "id": 88417626658607,
       "name": "Get Sturdy R6 Dance Emote"
+    },
+    {
+      "id": 85672726922408,
+      "name": "Lazy Brazil Dance"
+    },
+    {
+      "id": 109158682356724,
+      "name": "Floating Aura"
+    },
+    {
+      "id": 85164947015010,
+      "name": "Helicopter"
+    },
+    {
+      "id": 77154399686874,
+      "name": "Possessed Glitching"
+    },
+    {
+      "id": 115438364609842,
+      "name": "You're under arrest! - ILLIT"
+    },
+    {
+      "id": 95009224600702,
+      "name": "Very Very Very IOI"
+    },
+    {
+      "id": 88450854944955,
+      "name": "R6 Shuffle"
+    },
+    {
+      "id": 94387629055755,
+      "name": "Golden Freddy Inactivity Seat"
+    },
+    {
+      "id": 111193473579316,
+      "name": "Lean On Shoulder"
+    },
+    {
+      "id": 71761558544788,
+      "name": "Pull Ups"
+    },
+    {
+      "id": 85356825513878,
+      "name": "👻 Halloween Rattle Shake"
+    },
+    {
+      "id": 91104568988952,
+      "name": "Shadow Boxing"
+    },
+    {
+      "id": 99879842306697,
+      "name": "Invisible Box"
+    },
+    {
+      "id": 134965973193271,
+      "name": "Tornado"
+    },
+    {
+      "id": 111815599500309,
+      "name": "One Hand Pushup"
+    },
+    {
+      "id": 121670993398238,
+      "name": "Halloween Head Emote"
+    },
+    {
+      "id": 119519569278004,
+      "name": "Backrooms Scary Creature Emote"
+    },
+    {
+      "id": 135909636193644,
+      "name": "Posessed Emote"
+    },
+    {
+      "id": 104868249782553,
+      "name": "Assumptions Dance R6 Emote"
     }
   ]
 }

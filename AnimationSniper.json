@@ -1,7 +1,7 @@
 {
   "keyword": null,
-  "totalItems": 5944,
-  "lastUpdate": "2026-10-13T23:33:26.991Z",
+  "totalItems": 5946,
+  "lastUpdate": "2026-10-14T02:41:02.626Z",
   "data": [
     {
       "id": 2623795,
@@ -75837,6 +75837,32 @@
     {
       "id": 8535257094142,
       "name": "Sans Undertale Animation Pack (R6 CONVERTER)"
+    },
+    {
+      "id": 50572664995382,
+      "name": "Worm Animation Pack",
+      "bundledItems": {
+        "Idle": 130922582425033,
+        "Walk": 118948115178955,
+        "Run": 113274882852733,
+        "Jump": 106157369503996,
+        "Fall": 82259661009320,
+        "Climb": 109703465203960,
+        "Swim": 135929832498853
+      }
+    },
+    {
+      "id": 264198233167911,
+      "name": "Ultimate Aura Float Sit",
+      "bundledItems": {
+        "Idle": 82842644463414,
+        "Walk": 72383910015114,
+        "Run": 110955889598411,
+        "Jump": 84172465645367,
+        "Fall": 131671817536961,
+        "Climb": 87800894447901,
+        "Swim": 138194512319120
+      }
     }
   ]
 }
