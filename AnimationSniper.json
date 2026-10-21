@@ -1,7 +1,7 @@
 {
   "keyword": null,
-  "totalItems": 6769,
-  "lastUpdate": "2026-10-21T01:10:51.863Z",
+  "totalItems": 6784,
+  "lastUpdate": "2026-10-21T06:50:35.545Z",
   "data": [
     {
       "id": 2623795,
@@ -86306,6 +86306,192 @@
     {
       "id": 181853918295961,
       "name": "Needy Kawaii Anime Girl"
+    },
+    {
+      "id": 211107081362241,
+      "name": "Cute Tsundere Anime Boy Animation Pack",
+      "bundledItems": {
+        "Idle": 113323472847301,
+        "Walk": 74483403926761,
+        "Run": 134460953819371,
+        "Jump": 98835064472445,
+        "Fall": 130458935564808,
+        "Climb": 78941063657997,
+        "Swim": 109864392554649
+      }
+    },
+    {
+      "id": 56754255752631,
+      "name": "Gotta Go! 💩 Emergency Animation Pack",
+      "bundledItems": {
+        "Idle": 101201478160737,
+        "Walk": 126844254609653,
+        "Run": 73523230278728,
+        "Jump": 125670951917600,
+        "Fall": 92096138124054,
+        "Climb": 118482534656492,
+        "Swim": 127633036440106
+      }
+    },
+    {
+      "id": 206143944219555,
+      "name": "Baddie Walk 💋 Diva Animation Pack",
+      "bundledItems": {
+        "Idle": 115235639616979,
+        "Walk": 91477440068792,
+        "Run": 116866159792249,
+        "Jump": 120417573177506,
+        "Fall": 91562870847711,
+        "Climb": 134980521034494,
+        "Swim": 112190054469174
+      }
+    },
+    {
+      "id": 120352126222477,
+      "name": "Sonic Speedster Animation Pack",
+      "bundledItems": {
+        "Idle": 98099888831894,
+        "Walk": 117446168628711,
+        "Run": 102544887292710,
+        "Jump": 131653075160944,
+        "Fall": 136506893688408,
+        "Climb": 80248775571958,
+        "Swim": 136942267222215
+      }
+    },
+    {
+      "id": 225565449830767,
+      "name": "Take The L 💀 Meme Animation Pack",
+      "bundledItems": {
+        "Idle": 87392053060807,
+        "Walk": 139178139954162,
+        "Run": 70662899808941,
+        "Jump": 107972759669242,
+        "Fall": 109486835459228,
+        "Climb": 132018540855571,
+        "Swim": 72132323430294
+      }
+    },
+    {
+      "id": 112844563755208,
+      "name": "Sand Snake Animation Pack",
+      "bundledItems": {
+        "Idle": 95020725691542,
+        "Walk": 109254710098490,
+        "Run": 93491030123927,
+        "Jump": 102765084542708,
+        "Fall": 137754845604129,
+        "Climb": 76939107527681,
+        "Swim": 110494805347543
+      }
+    },
+    {
+      "id": 60761455061453,
+      "name": "R6 Divine Aura Animation Pack",
+      "bundledItems": {
+        "Idle": 139365680352327,
+        "Walk": 80234230760665,
+        "Run": 91482716726937,
+        "Jump": 102274071683702,
+        "Fall": 84269249437896,
+        "Climb": 80580689320241,
+        "Swim": 92141696125966
+      }
+    },
+    {
+      "id": 183393077175128,
+      "name": "🌷 Kawaii Chibi Princess Cute Animation Pack 🎀",
+      "bundledItems": {
+        "Idle": 88056505175444,
+        "Walk": 138571860518143,
+        "Run": 93110207426722,
+        "Jump": 90787484125342,
+        "Fall": 100948341024075,
+        "Climb": 131690539053702,
+        "Swim": 78679270439859
+      }
+    },
+    {
+      "id": 30527037204838,
+      "name": "🤖 Mech Robot Android 🤖",
+      "bundledItems": {
+        "Idle": 139054298193364,
+        "Walk": 102187559931922,
+        "Run": 113079051256196,
+        "Jump": 131713301663608,
+        "Fall": 78158755095755,
+        "Climb": 111550538179030,
+        "Swim": 119617318179852
+      }
+    },
+    {
+      "id": 59506741164725,
+      "name": "Hyper Animation Pack",
+      "bundledItems": {
+        "Idle": 81144768822531,
+        "Walk": 139062435221076,
+        "Run": 79997172397558,
+        "Jump": 107874971227377,
+        "Fall": 96409136865892,
+        "Climb": 99769379109557,
+        "Swim": 92451140597029
+      }
+    },
+    {
+      "id": 237814473263899,
+      "name": "Lumberjack Axe Animation 👨🪓🌳",
+      "bundledItems": {
+        "Idle": 136618064890004,
+        "Walk": 140320021614631,
+        "Run": 89902720799025,
+        "Jump": 82946031534507,
+        "Fall": 126859142189726,
+        "Climb": 106525697976903,
+        "Swim": 133116196045154
+      }
+    },
+    {
+      "id": 244777443908646,
+      "name": "🐿️ Squirrel Animation Pack 🐿️🌰",
+      "bundledItems": {
+        "Idle": 83761277181056,
+        "Walk": 78307962345787,
+        "Run": 80275226675765,
+        "Jump": 73770657932836,
+        "Fall": 92521800615505,
+        "Climb": 134278610009605,
+        "Swim": 83577882736824
+      }
+    },
+    {
+      "id": 93378697839470,
+      "name": "Kawaii School Girl Backpack Animation Pack",
+      "bundledItems": {
+        "Idle": 89671809824494
+      }
+    },
+    {
+      "id": 211246185803053,
+      "name": "HandStand Walk Animation Pack",
+      "bundledItems": {
+        "Jump": 114543380444252,
+        "Fall": 102172088729230,
+        "Climb": 110070268069090,
+        "Swim": 76016905763804
+      }
+    },
+    {
+      "id": 124794617546889,
+      "name": "R6 Flying Aura Animation Pack",
+      "bundledItems": {
+        "Idle": 73946524263525,
+        "Walk": 75687476939856,
+        "Run": 82279197783576,
+        "Jump": 81789991618295,
+        "Fall": 132735506770029,
+        "Climb": 129237134584510,
+        "Swim": 71760139682159
+      }
     }
   ]
 }
