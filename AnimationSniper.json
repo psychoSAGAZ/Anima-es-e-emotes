@@ -1,7 +1,7 @@
 {
   "keyword": null,
-  "totalItems": 11305,
-  "lastUpdate": "2026-11-21T21:23:01.449Z",
+  "totalItems": 11327,
+  "lastUpdate": "2026-11-22T01:51:25.396Z",
   "data": [
     {
       "id": 2623795,
@@ -143846,6 +143846,283 @@
       "name": "GTA VI Female Animation Pack",
       "bundledItems": {
         "Idle": 90612870067219
+      }
+    },
+    {
+      "id": 118757073974700,
+      "name": "shy kawaii whimsical animation pack",
+      "bundledItems": {
+        "Idle": 110417425886763,
+        "Walk": 119900908311996,
+        "Run": 105578387657847,
+        "Jump": 70477629044756,
+        "Fall": 136903196215320,
+        "Climb": 136304662928449,
+        "Swim": 139279405047519
+      }
+    },
+    {
+      "id": 188375754212863,
+      "name": "Kawaii Shy Girl Pack",
+      "bundledItems": {
+        "Idle": 92241228511023,
+        "Walk": 125958107481343,
+        "Run": 132602154999484,
+        "Jump": 90179265612792,
+        "Fall": 127695538150741,
+        "Climb": 76790425786672,
+        "Swim": 82743294994757
+      }
+    },
+    {
+      "id": 275549820402715,
+      "name": "Kawaii Shy Waving Girl",
+      "bundledItems": {
+        "Idle": 88845846767376,
+        "Walk": 98119944763052,
+        "Run": 99682227696374,
+        "Jump": 136813546569751,
+        "Fall": 90846204806089,
+        "Climb": 95237239442117,
+        "Swim": 73477876028951
+      }
+    },
+    {
+      "id": 46038328616803,
+      "name": "🐈 Elegant Cat Animation Pack",
+      "bundledItems": {
+        "Idle": 78702317077684,
+        "Walk": 70523972492173,
+        "Run": 76244028161388,
+        "Jump": 94051102520685,
+        "Fall": 137268707526268,
+        "Climb": 100162159664311,
+        "Swim": 74734254042665
+      }
+    },
+    {
+      "id": 252437053640954,
+      "name": "Mini Dog Animation Pack",
+      "bundledItems": {
+        "Idle": 139934756159824,
+        "Walk": 113776582200846,
+        "Run": 133698645145295,
+        "Jump": 129966177192635,
+        "Fall": 71273415395027,
+        "Climb": 139202594036285,
+        "Swim": 111063401570459
+      }
+    },
+    {
+      "id": 17920563340063,
+      "name": "Moon Gravity Animation Pack",
+      "bundledItems": {
+        "Idle": 97148629367908,
+        "Walk": 124922525419281,
+        "Run": 75245499964711,
+        "Jump": 134482106340945,
+        "Fall": 97712141799439,
+        "Climb": 123160310753581,
+        "Swim": 71420893195754
+      }
+    },
+    {
+      "id": 270219381998699,
+      "name": "Jolly Santa Elf Girl Kawaii Cute Anime Christmas",
+      "bundledItems": {
+        "Idle": 75866390989568,
+        "Walk": 123847017482961,
+        "Run": 140290689640139,
+        "Jump": 119981781130793,
+        "Fall": 84141586583190,
+        "Climb": 87245727704335,
+        "Swim": 136018929464274
+      }
+    },
+    {
+      "id": 71311178477336,
+      "name": "Asta Black Clover Animation Pack ⭐ORIGINAL⭐A",
+      "bundledItems": {
+        "Idle": 118497903146620,
+        "Walk": 82415303780371,
+        "Run": 128975182192380,
+        "Jump": 135170256470913,
+        "Fall": 86901588248485,
+        "Climb": 115052307555608,
+        "Swim": 108650922078791
+      }
+    },
+    {
+      "id": 77767506254845,
+      "name": "Wei Wuxian Animation Pack ⭐ORIGINAL⭐",
+      "bundledItems": {
+        "Idle": 89172558867621,
+        "Walk": 71196037661114,
+        "Run": 123932547328459,
+        "Jump": 91697337142861,
+        "Fall": 90420641245351,
+        "Climb": 79963035439616,
+        "Swim": 121538632580682
+      }
+    },
+    {
+      "id": 22777163836804,
+      "name": "Soldier Boy The Boys Animation Pack ⭐ORIGINAL⭐",
+      "bundledItems": {
+        "Idle": 80209324261167,
+        "Walk": 110439735979018,
+        "Run": 88561593589735,
+        "Jump": 103716932379455,
+        "Fall": 104737740047061,
+        "Climb": 110500562301330,
+        "Swim": 95947363907814
+      }
+    },
+    {
+      "id": 140641908067532,
+      "name": "Lucy Cyberpunk Animation Pack ⭐ORIGINAL⭐",
+      "bundledItems": {
+        "Idle": 106900613388107,
+        "Walk": 118799554619968,
+        "Run": 85180821816357,
+        "Jump": 89711323627570,
+        "Fall": 122532495275135,
+        "Climb": 124261711508844,
+        "Swim": 77680740567105
+      }
+    },
+    {
+      "id": 231260074412264,
+      "name": "Frieren Animation Pack ⭐ORIGINAL⭐",
+      "bundledItems": {
+        "Idle": 120648644074067,
+        "Walk": 91559696690997,
+        "Run": 105476806728419,
+        "Jump": 113274230505468,
+        "Fall": 135351708540846,
+        "Climb": 71700232947373,
+        "Swim": 74952291236067
+      }
+    },
+    {
+      "id": 16799537247632,
+      "name": "Bill Cipher Gravity Falls Animation Pack",
+      "bundledItems": {
+        "Idle": 93973370912093,
+        "Walk": 138754894447847,
+        "Run": 99130402494750,
+        "Jump": 83144144399101,
+        "Fall": 112643374510142,
+        "Climb": 138971547455165,
+        "Swim": 102643466421627
+      }
+    },
+    {
+      "id": 210015361355686,
+      "name": "Homelander The Boys Animation Pack ⭐ORIGINAL⭐",
+      "bundledItems": {
+        "Idle": 116457769135479,
+        "Walk": 125559446430210,
+        "Run": 102275838671919,
+        "Jump": 129970456209569,
+        "Fall": 104839050790406,
+        "Climb": 99386041209493,
+        "Swim": 88973683358945
+      }
+    },
+    {
+      "id": 177210404298966,
+      "name": "Makima Chainsaw Man Animation Pack",
+      "bundledItems": {
+        "Idle": 91049228160211
+      }
+    },
+    {
+      "id": 55644698730056,
+      "name": "Johnny Joestar",
+      "bundledItems": {
+        "Jump": 90915404806663,
+        "Fall": 127829312705597,
+        "Climb": 97398622414759,
+        "Swim": 91023556339191
+      }
+    },
+    {
+      "id": 259527090309509,
+      "name": "Soft Cute Kawaii Shy Sleepy Doll Anime Animation",
+      "bundledItems": {
+        "Idle": 114104932050753,
+        "Walk": 128008733795627,
+        "Run": 74647509916661,
+        "Jump": 103250841071437,
+        "Fall": 136620958788156,
+        "Climb": 135186154296476,
+        "Swim": 140663866708198
+      }
+    },
+    {
+      "id": 220833396764527,
+      "name": "GTA Miami Baddie Animation Pack",
+      "bundledItems": {
+        "Idle": 96215662816624,
+        "Walk": 81557955055583,
+        "Run": 119721386651766,
+        "Jump": 85436789149112,
+        "Fall": 79629002114631,
+        "Climb": 105925279128975,
+        "Swim": 79152834927331
+      }
+    },
+    {
+      "id": 183763966696598,
+      "name": "🌐 Ragdoll Glitch Pack",
+      "bundledItems": {
+        "Idle": 109923998647540,
+        "Walk": 137664193943100,
+        "Run": 139605361680742,
+        "Jump": 89077870608503,
+        "Fall": 91479443586991,
+        "Climb": 98937083727261,
+        "Swim": 131253493937349
+      }
+    },
+    {
+      "id": 251238705662758,
+      "name": "Hopeful Animation Pack",
+      "bundledItems": {
+        "Idle": 135119451171204,
+        "Walk": 110162785731238,
+        "Run": 137770940696465,
+        "Jump": 81064852888073,
+        "Fall": 80717469908439,
+        "Climb": 74053206484348,
+        "Swim": 94964271972166
+      }
+    },
+    {
+      "id": 149382541207523,
+      "name": "Jiangshi Vampire Zombie",
+      "bundledItems": {
+        "Idle": 92286996853624,
+        "Walk": 98449371296728,
+        "Run": 104326303290322,
+        "Jump": 105695475559831,
+        "Fall": 98174540968258,
+        "Climb": 117601142685940,
+        "Swim": 86305003283701
+      }
+    },
+    {
+      "id": 172836913873636,
+      "name": "Brusha Dandy's World Animation Pack ⭐ORIGINAL⭐",
+      "bundledItems": {
+        "Idle": 75213872897621,
+        "Walk": 112932024274253,
+        "Run": 118376345421718,
+        "Jump": 127835735269965,
+        "Fall": 115004277785602,
+        "Climb": 122533099228179,
+        "Swim": 86487495856118
       }
     }
   ]
